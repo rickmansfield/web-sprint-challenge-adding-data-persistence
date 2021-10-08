@@ -1,6 +1,6 @@
 
-exports.up = function (knex) {
-    return knex.schema
+exports.up = async function (knex) {
+    await knex.schema
         .createTable('projects', tbl => {
             tbl.increments('project_id')
             tbl.string('project_name', 128).notNullable()
