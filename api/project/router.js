@@ -12,4 +12,13 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
+router.post('/', (req, res, next) => {
+    projectsModel
+        .addProject(req.body)
+        .then((project) => {
+            res.status(201).json(project)
+        })
+        .catch(next)
+})
+
 module.exports = router
