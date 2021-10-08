@@ -1,4 +1,8 @@
 const db = require('../../data/dbConfig')
+//SELECT
+// p.project_id, t.project_id
+// from tasks as t
+// join projects as p on p.project_id = t.project_id;
 
 async function fetchAllTasks() {
     const rows = await db('tasks as t')
